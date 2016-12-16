@@ -4,25 +4,12 @@ package logicForFolderStructure;
 public class FoldersAndFilesdata {
     private String name;
     private String file;
-    private String folder;
+    private boolean folder;
 
-    public FoldersAndFilesdata(String name, String file, String folder) {
-        this.name = name;
-        this.file = file;
-        this.folder = folder;
-    }
 
-    public void setName(String name) {
+    public void setName( String name) {
 
         this.name = name;
-    }
-
-    public void setFile(String file) {
-        this.file = file;
-    }
-
-    public void setFolder(String folder) {
-        this.folder = folder;
     }
 
     public String getName() {
@@ -30,11 +17,21 @@ public class FoldersAndFilesdata {
         return name;
     }
 
+    public void setFile(String file) {
+        this.file = file;
+    }
+
     public String getFile() {
         return file;
     }
 
-    public String getFolder() {
-        return folder;
+    public boolean isFolder() {
+        return isFolder();
     }
+
+
+    public void setFolder(boolean folder) {
+        this.folder = folder;
+    }
+
 }

@@ -7,7 +7,16 @@
 </head>
 <body>
    <k:forEach items="${datas}" var="file">
-              <p>  ${file} </p>
-             </k:forEach>
+        <dl>
+              <dt>
+                    <k:when test="${!file.isFolder()}">
+
+                         ${file.getName()}
+                ${}
+
+              </dt>
+        </dl>
+
+   </k:forEach>
 </body>
 </html>

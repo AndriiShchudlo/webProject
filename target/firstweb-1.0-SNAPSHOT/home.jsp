@@ -7,7 +7,9 @@
 </head>
 <body>
    <k:forEach items="${datas}" var="file">
+
               <p>  ${file} </p>
-             </k:forEach>
+
+   </k:forEach>
 </body>
 </html>

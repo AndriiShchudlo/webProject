@@ -4,28 +4,26 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Filler {
 
 
 
-    public List<String> getListFilesAndFolders(String path) {
+    public List<FoldersAndFilesdata> getListFilesAndFolders(String path) {
+        File file = new File(path);
+        List<FoldersAndFilesdata> files = new ArrayList<>();
 
 
+            for (File i : file.listFiles()) {
+                FoldersAndFilesdata fileAndFolder = new FoldersAndFilesdata();
+               fileAndFolder.setName(i.getName());
+               fileAndFolder.setFolder(i.isDirectory());
 
-        List<String> listWithFileNames;
-        listWithFileNames = new ArrayList<>();
-        File f = new File(path);
+               files.add(fileAndFolder);
 
-        for (File s : f.listFiles()) {
-            if (s.isDirectory()) {
-                listWithFileNames.add(s.getName());
 
-                } else if (s.isDirectory()) {
+            }
+            return files;
 
-                  
-                }
-        }
-
-        return listWithFileNames;
     }
 }
