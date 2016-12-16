@@ -5,7 +5,16 @@ public class FoldersAndFiles {
     private String name;
     private String url;
 
-    private String file;
+    public void setUrlBack(String urlBack) {
+        this.urlBack = urlBack;
+    }
+
+    public String getUrlBack() {
+
+        return urlBack;
+    }
+
+    private String urlBack;
 
 
 
@@ -29,13 +38,7 @@ public class FoldersAndFiles {
         return name;
     }
 
-    public void setFile(String file) {
-        this.file = file;
-    }
 
-    public String getFile() {
-        return file;
-    }
 
     public boolean isFolder() {
         return folder;
