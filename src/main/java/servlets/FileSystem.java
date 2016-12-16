@@ -1,7 +1,8 @@
 package servlets;
 
-import logicForFolderStructure.Filler;
-import logicForFolderStructure.FoldersAndFilesdata;
+import logicForFolderStructure.FormationFileList;
+import logicForFolderStructure.FoldersAndFiles;
+import logicForFolderStructure.Validator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,13 +14,18 @@ import java.util.List;
 
 
 @WebServlet("/")
-public class FolderStructure extends HttpServlet {
-    Filler folderStructure = new Filler();
+public class FileSystem extends HttpServlet {
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        FormationFileList folderStructure = new FormationFileList();
+        Validator validator = new Validator();
 
-        List<FoldersAndFilesdata> filesAndFolders = folderStructure.getListFilesAndFolders("/home/andriis");
+        String path = request.getParameter("path");
+        path =  validator.isNull(path);
+
+        List<FoldersAndFiles> filesAndFolders = folderStructure.getListFilesAndFolders(path);
 
         request.setAttribute("datas", filesAndFolders);
         request.getRequestDispatcher("home.jsp").forward(request, response);

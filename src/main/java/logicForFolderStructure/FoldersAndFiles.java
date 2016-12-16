@@ -1,9 +1,21 @@
 package logicForFolderStructure;
 
 
-public class FoldersAndFilesdata {
+public class FoldersAndFiles {
     private String name;
+    private String url;
+
     private String file;
+
+
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUrl() {
+            return url;
+    }
     private boolean folder;
 
 
@@ -26,7 +38,7 @@ public class FoldersAndFilesdata {
     }
 
     public boolean isFolder() {
-        return isFolder();
+        return folder;
     }
 
 

@@ -1,22 +1,29 @@
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="k"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
    <title>com</title>
 </head>
-<body>
-   <k:forEach items="${datas}" var="file">
-        <dl>
-              <dt>
-                    <k:when test="${!file.isFolder()}">
+<p>
 
-                         ${file.getName()}
-                ${}
+<p><h3> <a href="?path=/home"> "H O M E"</a></h3></p>
+<h4> <a href="#" onclick="history.back()"> "Back" </a> </h4>
+<!--<input type="button" value="back_2" onclick="history.back()">-->
+<ul>
 
-              </dt>
-        </dl>
+   <c:forEach items="${datas}" var="file">
 
-   </k:forEach>
+        <c:choose>
+            <c:when test = "${!file.isFolder()}">
+                 <li> ${file.getName()}</li>
+            </c:when>
+            <c:otherwise>
+               <li type='none'> <a href="?path=${file.getUrl()}">${file.getName()}</a> </li>
+            </c:otherwise>
+        </c:choose>
+
+   </c:forEach>
+</ul>
 </body>
 </html>
