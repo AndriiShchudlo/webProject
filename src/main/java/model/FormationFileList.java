@@ -1,4 +1,4 @@
-package logicForFolderStructure;
+package model;
 
 import ViewPackage.FilesView;
 
@@ -11,7 +11,6 @@ public class FormationFileList {
     public List<FilesView> getListFilesAndFolders(String path) {
 
         List<FilesView> files = new ArrayList<>();
-
         File file = new File(path);
 
         for (File i : file.listFiles()) {

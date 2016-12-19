@@ -1,9 +1,9 @@
-package servlets;
+package controller;
 
 import ViewPackage.FilesView;
-import logicForFolderStructure.BackFolder;
+import model.BackFolder;
 import ViewPackage.BackGetter;
-import logicForFolderStructure.*;
+import model.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,10 +26,8 @@ public class FileSystem extends HttpServlet {
         path =  validator.isNull(path);
 
         BackFolder back = new BackFolder();
-
         BackGetter backGetter =  back.backFolder(path);
 
-        
         List<FilesView> filesAndFolders = folderStructure.getListFilesAndFolders(path);
 
         request.setAttribute("datas", filesAndFolders);

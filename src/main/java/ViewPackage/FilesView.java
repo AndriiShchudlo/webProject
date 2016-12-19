@@ -5,10 +5,6 @@ public class FilesView {
     private String name;
     private String url;
 
-
-
-
-
     public void setUrl(String url) {
         this.url = url;
     }
@@ -17,7 +13,6 @@ public class FilesView {
             return url;
     }
     private boolean folder;
-
 
     public void setName( String name) {
 
@@ -29,15 +24,11 @@ public class FilesView {
         return name;
     }
 
-
-
     public boolean isFolder() {
         return folder;
     }
 
-
     public void setFolder(boolean folder) {
         this.folder = folder;
     }
-
 }

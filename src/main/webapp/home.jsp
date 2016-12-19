@@ -15,7 +15,6 @@
 <h4> <a href="?path=${back.getUrlBack()}"> Back </a> </h4>
 </c:if>
 
-
 <ul>
 
    <c:forEach items="${datas}" var="file">

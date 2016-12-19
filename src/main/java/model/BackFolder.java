@@ -1,9 +1,10 @@
-package logicForFolderStructure;
+package model;
 import ViewPackage.BackGetter;
 
 import java.io.File;
 
 public class BackFolder {
+
     public BackGetter backFolder (String path){
 
             BackGetter backGetter = new BackGetter();

@@ -1,4 +1,4 @@
-package logicForFolderStructure;
+package model;
 
 /**
  * Created by andriis on 12/16/16.
