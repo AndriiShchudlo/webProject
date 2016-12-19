@@ -26,12 +26,13 @@ public class FileSystem extends HttpServlet {
         path =  validator.isNull(path);
 
         BackFolder back = new BackFolder();
-        back.backFolder(path);
+       String p =  back.backFolder(path);
 
 
         List<FoldersAndFiles> filesAndFolders = folderStructure.getListFilesAndFolders(path);
 
         request.setAttribute("datas", filesAndFolders);
+        request.setAttribute("p", p);
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
