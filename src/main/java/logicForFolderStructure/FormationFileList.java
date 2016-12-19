@@ -1,19 +1,21 @@
 package logicForFolderStructure;
 
+import ViewPackage.FilesView;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FormationFileList {
 
-    public List<FoldersAndFiles> getListFilesAndFolders(String path) {
+    public List<FilesView> getListFilesAndFolders(String path) {
 
-        List<FoldersAndFiles> files = new ArrayList<>();
+        List<FilesView> files = new ArrayList<>();
 
         File file = new File(path);
 
         for (File i : file.listFiles()) {
-            FoldersAndFiles fileAndFolder = new FoldersAndFiles();
+            FilesView fileAndFolder = new FilesView();
 
                 fileAndFolder.setName(i.getName());
                 fileAndFolder.setFolder(i.isDirectory());

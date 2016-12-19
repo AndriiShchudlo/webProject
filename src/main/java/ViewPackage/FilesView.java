@@ -1,7 +1,7 @@
-package logicForFolderStructure;
+package ViewPackage;
 
 
-public class FoldersAndFiles {
+public class FilesView {
     private String name;
     private String url;
 

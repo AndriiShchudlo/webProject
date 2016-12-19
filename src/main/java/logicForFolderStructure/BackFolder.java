@@ -1,15 +1,15 @@
 package logicForFolderStructure;
+import ViewPackage.BackGetter;
+
 import java.io.File;
 
 public class BackFolder {
-    public String backFolder (String path){
-        Validator validator = new Validator();
-        path =  validator.isNull(path);
+    public BackGetter backFolder (String path){
 
-            FoldersAndFiles back = new FoldersAndFiles();
+            BackGetter backGetter = new BackGetter();
             File file = new File(path);
+           backGetter.setUrlBack(file.getParent());
 
-
-        return  file.getParent();
+        return backGetter;
     }
 }

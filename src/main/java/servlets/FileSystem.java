@@ -1,9 +1,9 @@
 package servlets;
 
+import ViewPackage.FilesView;
 import logicForFolderStructure.BackFolder;
-import logicForFolderStructure.FormationFileList;
-import logicForFolderStructure.FoldersAndFiles;
-import logicForFolderStructure.Validator;
+import ViewPackage.BackGetter;
+import logicForFolderStructure.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,13 +26,14 @@ public class FileSystem extends HttpServlet {
         path =  validator.isNull(path);
 
         BackFolder back = new BackFolder();
-       String p =  back.backFolder(path);
 
+        BackGetter backGetter =  back.backFolder(path);
 
-        List<FoldersAndFiles> filesAndFolders = folderStructure.getListFilesAndFolders(path);
+        
+        List<FilesView> filesAndFolders = folderStructure.getListFilesAndFolders(path);
 
         request.setAttribute("datas", filesAndFolders);
-        request.setAttribute("p", p);
+        request.setAttribute("back", backGetter);
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }
