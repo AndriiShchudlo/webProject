@@ -8,7 +8,7 @@
 <p>
 
 <p><h3> <a href="?path=/home"> "H O M E"</a></h3></p>
-<h4> <a href="#" onclick="history.back()"> <- Back </a> </h4>
+<h4> <a href="#" onclick="history.back()"> <- Back history </a> </h4>
 
 <h4> <a href="?path=${file.getUrlBack()}"> Back </a> </h4>
 

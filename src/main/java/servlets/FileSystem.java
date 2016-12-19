@@ -1,5 +1,6 @@
 package servlets;
 
+import logicForFolderStructure.BackFolder;
 import logicForFolderStructure.FormationFileList;
 import logicForFolderStructure.FoldersAndFiles;
 import logicForFolderStructure.Validator;
@@ -21,9 +22,12 @@ public class FileSystem extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FormationFileList folderStructure = new FormationFileList();
         Validator validator = new Validator();
-
         String path = request.getParameter("path");
         path =  validator.isNull(path);
+
+        BackFolder back = new BackFolder();
+        back.backFolder(path);
+
 
         List<FoldersAndFiles> filesAndFolders = folderStructure.getListFilesAndFolders(path);
 

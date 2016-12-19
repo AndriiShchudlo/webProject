@@ -19,7 +19,7 @@ public class FormationFileList {
                 fileAndFolder.setFolder(i.isDirectory());
                 fileAndFolder.setUrl(i.getAbsolutePath());
 
-                fileAndFolder.setUrlBack(i.getParent());
+
 
 
                 files.add(fileAndFolder);
