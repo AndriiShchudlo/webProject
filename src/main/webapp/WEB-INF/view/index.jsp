@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<p><h3> <a href="?path=/home"> "file structure"</a></h3></p>
-
 <h1> Hello World</h1>
+<p><h2> <a href="/">File Structure </a></h2></p>
+
 </body>
 </html>
